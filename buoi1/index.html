@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16302</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+    <!--
+        Nếu màn hình từ md trở lên -> 3 div trên 1 dòng
+        Nếu màn hình có kích thước là sm -> div1 + div2 trên 1 dòng, div3 sang dòng mới
+        Còn lại, mỗi div 1 dòng
+    -->
+    <div class="container">
+        <div class="row" style="height: 200px;">
+            <div class="col-12 col-sm-4 col-md-2 bg-warning">
+                Div1
+            </div>
+            <div class="col-12 col-sm-8 col-md-8 bg-danger">
+                Div2
+            </div>
+            <div class="col-12 col-sm-12 col-md-2 bg-primary">
+                Div3
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
