@@ -9,7 +9,29 @@
 </head>
 <body>
     <div class="container">
-        <header class="row bg-danger" style="height: 100px;"></header>
+        <header class="row">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://wowslider.com/sliders/demo-93/data1/images/lake.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://wowslider.com/sliders/demo-93/data1/images/landscape.jpg" class="d-block w-100">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </header>
         <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">IT16302</a>
@@ -52,7 +74,12 @@
                     <div class="card-header">Hãng điện thoại nổi bật</div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="">Apple</a>
+                            <a href="">
+                                Apple
+                                <span data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Giảm 99%"
+                                    class="badge bg-danger rounded-pill">Siêu khuyến mãi</span>
+                            </a>
                         </li>
                         <li class="list-group-item">
                             <a href="">Samsung</a>
@@ -85,6 +112,9 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
+                                                <div class="alert alert-success">
+                                                    Thêm mới thành công
+                                                </div>
                                                 <div class="mt-2 row">
                                                     <label class="col-2" for="fullname">Họ tên</label>
                                                     <div class="col-10">
@@ -152,9 +182,17 @@
                         </div>
                         <div class="card p-0 mt-2">
                             <div class="card-header">
-                                Danh sách khách hàng
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h4>Danh sách khách hàng</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary col-3 offset-9"
+                                            data-bs-toggle="collapse" data-bs-target="#tbl_sv">Mở rộng</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="table-responsive">
+                            <div class="table-responsive collapse" id="tbl_sv">
                                 <table class="table table-striped text-nowrap">
                                     <thead>
                                         <td>#</td>
@@ -230,7 +268,18 @@
                                 </table>
                             </div>
                             <div class="card-footer">
-                                Tổng số 3 khách hàng
+                                <div class="row">
+                                    <div class="col-6">Tổng số 3 khách hàng</div>
+                                    <div class="col-6">
+                                        <ul class="pagination justify-content-end">
+                                            <li class="page-item"><a class="page-link" href="#"> << </a></li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#"> >> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
