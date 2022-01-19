@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="info_app">
+    <div ng-controller="info_controller">
+        <ul>
+            <li>{{ info.ten }}</li>
+            <li>{{ info.ma }}</li>
+            <li>{{ info.email }}</li>
+            <li>{{ info.sdt }}</li>
+            <li>{{ info.chuyen_nganh }}</li>
+        </ul>
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        // B1: khởi tạo UD AngularJs
+        var app = angular.module("info_app", []);
+
+        // B2: khai báo ng-app
+        // B3: Tạo ra controller & khai báo với UD AngularJs
+        function infoController($scope) {
+            var info = {
+                ten: "Tien",
+                ma: "TienNH21",
+                email: "tiennh21@fe.edu.vn",
+                sdt: "0123123123",
+                chuyen_nganh: "UDPM"
+            };
+
+            $scope.info = info;
+        }
+
+        app.controller("info_controller", infoController);
+    </script>
+</body>
+</html>

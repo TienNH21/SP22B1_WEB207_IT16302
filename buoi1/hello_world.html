@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16302</title>
+</head>
+<body ng-app="hello_world_app">
+    <div ng-controller="hello_controller">
+        {{ welcome }}
+    </div>
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        // B1: Tạo 1 ứng dụng AngularJs với tên 'hello_world_app'
+        var app = angular.module("hello_world_app", []);
+
+        // B2: Khai báo phạm vi hoạt động của UD AngularJs với ng-app
+
+        /*
+         * B3: Tạo controller & khai báo với AngularJs
+         *     để quản lý các thành phần trên giao diện: ng-controller
+         */
+        function helloController($scope) {
+            $scope.welcome = "Hello SP22 - IT16302";
+        }
+        app.controller("hello_controller", helloController);
+
+        // B4: Sử dụng AngularJs Expression {{  }}
+    </script>
+</body>
+</html>
