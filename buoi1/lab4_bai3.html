@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16302 - Lab 4 Bài 3</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-app="lab4_bai3">
+    <table class="table" ng-controller="my_controller">
+        <thead>
+            <tr>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="sv in dssv">
+                <td>{{ sv.name }}</td>
+                <td>{{ sv.birthday }}</td>
+                <td>{{ sv.gender == 1 ? "Nam" : "Nữ" }}</td>
+                <td>{{ sv.mark }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("lab4_bai3", []);
+        function myController($scope) {
+            $scope.dssv = [
+                {
+                    name: "Ng Van A",
+                    birthday: "01/01/2000",
+                    gender: 1,
+                    mark: 6
+                },
+                {
+                    name: "Ng Van B",
+                    birthday: "01/01/2000",
+                    gender: 1,
+                    mark: 7
+                },
+                {
+                    name: "Ng Thi C",
+                    birthday: "01/01/2000",
+                    gender: 0,
+                    mark: 10
+                },
+            ];
+        }
+
+        app.controller("my_controller", myController);
+    </script>
+</body>
+</html>
