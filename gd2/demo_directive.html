@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT16302 - Demo directive</title>
+</head>
+<body ng-app="demo_directive">
+    <div ng-controller="my_controller">
+        <p>Họ tên: {{ sv.ten }}</p>
+
+        <p>
+            Giới tính:
+            <span ng-if="sv.gioi_tinh == 1">Nam</span>
+            <span ng-if="sv.gioi_tinh == 0">Nữ</span>
+        </p>
+
+        <p ng-hide="sv.diem > 0">Bạn chưa học môn WEB207</p>
+        <p ng-show="sv.diem >= 5">Bạn đã qua môn WEB207</p>
+        <p ng-show="sv.diem < 5 && sv.diem > 0">Bạn chưa qua môn WEB207</p>
+
+        <p ng-switch="sv.chuyen_nganh">
+            <span ng-switch-when="UDPM">Ứng dụng phầm mềm</span>
+            <span ng-switch-when="TKTW">Thiết kế trang web</span>
+            <span ng-switch-when="LTMT">Lập trình máy tính</span>
+            <span ng-switch-default>Chuyên ngành ko hợp lệ</span>
+        </p>
+
+        <div>
+            Các môn đã học:
+            <p ng-repeat="mon in sv.mon_hoc">{{ $index }} - {{ mon }}</p>
+        </div>
+    </div>
+
+    <script src="./js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_directive", []);
+
+        function myController($scope) {
+            $scope.sv = {
+                ten: "Ng Van A",
+                gioi_tinh: 1,
+                diem: 10,
+                chuyen_nganh: "UDPM",
+                mon_hoc: [
+                    "Nhập môn lập trình",
+                    "Lập trình Java 1",
+                    "Lập trình Java 2",
+                    "Lập trình Java 3",
+                    "Frontend Framework",
+                ]
+            };
+        }
+
+        app.controller("my_controller", myController);
+    </script>
+</body>
+</html>
